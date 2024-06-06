@@ -5,7 +5,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-collapse d-lg-flex collapse" id="navbarsExample11" style="">
+        <div class="navbar-collapse d-lg-flex collapse" id="navbarsExample11">
             <a class="navbar-brand col-lg-3 me-0" href="#">
                 <h2 class="fw-bolder">Rielyrics.</h2>
             </a>

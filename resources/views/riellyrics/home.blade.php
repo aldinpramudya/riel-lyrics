@@ -23,7 +23,7 @@
         <div class="d-flex justify-content-center mt-2">
             {{-- Class Div For flex for many cards --}}
             <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="{{asset('img/lisa-best-day.jpg')}}" class="card-img-top" alt="Song Name" style="width: 100%; height: auto;">
                 <div class="card-body">
                     <h5 class="card-title">Song Title</h5>
                     <p class="card-text">Artist</p>
