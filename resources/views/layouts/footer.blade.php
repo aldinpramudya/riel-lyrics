@@ -41,9 +41,8 @@
 
     <!-- Copyright -->
     <div class="text-center p-3 text-light" style="background-color: rgba(35, 35, 35, 0.92);">
-        © 2024 Copyright:
-        <a class="text-body text-light" href="">Riel</a>
-    </div>
+        © 2024 Copyright : Riel
+    </div> 
     <!-- Copyright -->
 </footer>
 <!-- Footer -->

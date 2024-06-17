@@ -14,14 +14,21 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home1');
 
-Route::get('/test', function(){
-    return view('riellyrics.home');
-});
+// Route Guest
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/artist', [App\Http\Controllers\ArtistController::class, 'index'])->name('artist');
+Route::get('/requestlyrics', [App\Http\Controllers\RequestLyricsController::class, 'index'])->name('requestlyrics');
+Route::get('/aboutjoinus', [App\Http\Controllers\AboutJoinUsController::class, 'index'])->name('aboutjoinus');
+
+// Route Admin
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin-login');
+
+Route::get('/test', [App\Http\Controllers\AdminDashboardController::class, 'index'])->name('test');

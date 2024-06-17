@@ -24,6 +24,7 @@
     <div class="d-flex flex-column min-vh-100">
         @include('layouts.footer')
     </div>
+
 </body>
 
 </html>

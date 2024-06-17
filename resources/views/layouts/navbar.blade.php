@@ -6,20 +6,27 @@
         </button>
 
         <div class="navbar-collapse d-lg-flex collapse" id="navbarsExample11">
-            <a class="navbar-brand col-lg-3 me-0" href="#">
+            <a class="navbar-brand col-lg-3 me-0" href="{{ route('home') }}">
                 <h2 class="fw-bolder">Rielyrics.</h2>
             </a>
             <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                 <li class="nav-item">
-                    <a class="nav-link active fw-bolder text-uppercase" aria-current="page" href="#">artist</a>
+                    <a class="nav-link active fw-bolder text-uppercase" aria-current="page"
+                        href="{{ route('artist') }}">artist</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active fw-bolder text-uppercase" aria-current="page" href="#">request lyrics</a>
+                    <a class="nav-link active fw-bolder text-uppercase" aria-current="page"
+                        href="{{ route('requestlyrics') }}">request lyrics</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active fw-bolder text-uppercase" aria-current="page" href="#">about/join us</a>
+                    <a class="nav-link active fw-bolder text-uppercase" aria-current="page"
+                        href="{{ route('aboutjoinus') }}">about/join us</a>
                 </li>
             </ul>
+            <div class="ms-auto">
+                <a class="nav-link active fw-bolder text-uppercase" aria-current="page"
+                    href="{{ route('admin-login') }}">login</a>
+            </div>
         </div>
     </div>
 </nav>
