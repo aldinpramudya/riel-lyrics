@@ -29,6 +29,11 @@ Route::get('/requestlyrics', [App\Http\Controllers\RequestLyricsController::clas
 Route::get('/aboutjoinus', [App\Http\Controllers\AboutJoinUsController::class, 'index'])->name('aboutjoinus');
 
 // Route Admin
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin-login');
-
-Route::get('/test', [App\Http\Controllers\AdminDashboardController::class, 'index'])->name('test');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+    Route::get('/admin/artist', [App\Http\Controllers\AdminArtistController::class, 'index'])->name('admin-artist');
+    Route::get('/admin/albums', [App\Http\Controllers\AdminAlbumsController::class, 'index'])->name('admin-albums');
+    Route::get('/admin/songs', [App\Http\Controllers\AdminSongsController::class, 'index'])->name('admin-songs');
+    Route::get('/admin/lyrics', [App\Http\Controllers\AdminLyricsController::class, 'index'])->name('admin-lyrics');
+    Route::get('/admin/requestlyrics', [App\Http\Controllers\AdminRequestController::class, 'index'])->name('admin-requestlyrics');
+});

@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <div class="mb-4">
                         <div class="float-start mini-stat-img me-4">
-                            <img src="assets/images/services-icon/01.png" alt="">
+                            <img src="#" alt="">
                         </div>
                         <h5 class="font-size-16 text-uppercase text-white-50">Artist</h5>
                         <h3 class="fw-medium font-size-24">1,685</h3>
@@ -36,7 +36,7 @@
                 <div class="card-body">
                     <div class="mb-4">
                         <div class="float-start mini-stat-img me-4">
-                            <img src="assets/images/services-icon/02.png" alt="">
+                            <img src="#" alt="">
                         </div>
                         <h5 class="font-size-16 text-uppercase text-white-50">Albums</h5>
                         <h4 class="fw-medium font-size-24">52,368</h4>
@@ -54,7 +54,7 @@
                 <div class="card-body">
                     <div class="mb-4">
                         <div class="float-start mini-stat-img me-4">
-                            <img src="assets/images/services-icon/03.png" alt="">
+                            <img src="#" alt="">
                         </div>
                         <h5 class="font-size-16 text-uppercase text-white-50">Songs</h5>
                         <h4 class="fw-medium font-size-24">15.8</h4>
@@ -72,7 +72,7 @@
                 <div class="card-body">
                     <div class="mb-4">
                         <div class="float-start mini-stat-img me-4">
-                            <img src="assets/images/services-icon/04.png" alt="">
+                            <img src="#" alt="">
                         </div>
                         <h5 class="font-size-16 text-uppercase text-white-50">Lyrics</h5>
                         <h4 class="fw-medium font-size-24">2436</h4>

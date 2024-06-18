@@ -25,7 +25,7 @@
             </ul>
             <div class="ms-auto">
                 <a class="nav-link active fw-bolder text-uppercase" aria-current="page"
-                    href="{{ route('admin-login') }}">login</a>
+                    href="{{ route('admin') }}">login</a>
             </div>
         </div>
     </div>
