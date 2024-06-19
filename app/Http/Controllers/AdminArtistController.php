@@ -15,11 +15,12 @@ class AdminArtistController extends Controller
 
     public function index()
     {
-        return view('admin.artists');
+        $artists = Artist::all();
+        return view('admin.artists', compact('artists'));
     }
 
     public function create(){
-        return view('#');
+        return view('admin.artist-create');
     }
 
     public function store(Request $request){
@@ -32,14 +33,16 @@ class AdminArtistController extends Controller
 
         Artist::create($request->all());
 
-        return redirect()->route('admin.artists')->with('success', 'Artist created successfully');
+        return redirect()->route('admin-artist')->with('success', 'Artist created successfully');
     }
 
-    public function edit(Artist $artist){
-        return view('#', compact('artist'));
+    public function edit($id)
+    {
+        $artist = Artist::find($id);
+        return view('admin.artist-edit', compact('artist'));
     }
 
-    public function update(Request $request, Artist $artist){
+    public function update(Request $request, $id){
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required',
@@ -47,16 +50,19 @@ class AdminArtistController extends Controller
             'youtube_link' => 'nullable|url',
         ]);
 
+        $artist = Artist::find($id);
         $artist->update($request->all());
 
-        return redirect()->route('admin.artists')->with('success', 'Artist updated successfully');
+        return redirect()->route('admin-artist')->with('success', 'Artist updated successfully');
     }
 
-    public function destroy(Artist $artist){
-        
+    public function destroy($id){
+
+        $artist = Artist::findOrFail($id);
         $artist->delete();
 
-        return redirect()->route('admin.artists')->with('success', 'Artist deleted successfully');
+
+        return redirect()->route('admin-artist')->with('success', 'Artist deleted successfully');
     }
 
 

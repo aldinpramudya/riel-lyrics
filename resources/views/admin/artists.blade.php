@@ -9,6 +9,11 @@
                     <li class="breadcrumb-item active">Artist List</li>
                 </ol>
             </div>
+            <div class="col-md-4 d-flex justify-content-end">
+                <a href="{{ route('admin-artist-create') }}">
+                    <button type="button" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Add New Artist </button>
+                </a>
+            </div>
         </div>
     </div>
     <!-- end page title -->
@@ -28,13 +33,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>tes</td>
-                            </tr>
+                            @foreach ($artists as $artist)
+                                <tr>
+                                    <td>{{ $artist->name }}</td>
+                                    <td>{{ Str::words($artist->description, 10, '...') }}</td>
+                                    <td>{{ $artist->instagram_link }}</td>
+                                    <td>{{ $artist->youtube_link }}</td>
+                                    <td>
+                                        <a href="{{ route('admin-artist-edit', $artist->id) }}">
+                                            <button type="button" class="btn btn-primary"><i class="bi bi-pencil"></i>
+                                                Edit</button>
+                                        </a>
+                                        <form action="{{ route('admin-artist-delete', $artist->id) }}" method="POST" style="display: inline-block">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i>
+                                                Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
 
@@ -45,5 +63,4 @@
 @endsection
 
 @section('datatable-js')
-   
 @endsection
