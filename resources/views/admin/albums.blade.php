@@ -4,10 +4,15 @@
     <div class="page-title-box">
         <div class="row align-items-center">
             <div class="col-md-8">
-                <h6 class="page-title">Album</h6>
+                <h6 class="page-title">Albums</h6>
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item active">Album List</li>
+                    <li class="breadcrumb-item active">Albums List</li>
                 </ol>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+                <a href="{{ route('admin-albums-create') }}">
+                    <button type="button" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Add New Albums </button>
+                </a>
             </div>
         </div>
     </div>
@@ -16,39 +21,39 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-
-                    <h4 class="card-title">Default Datatable</h4>
-                    <p class="card-title-desc">DataTables has most features enabled by
-                        default, so all you need to do to use it with your own tables is to call
-                        the construction function: <code>$().DataTable();</code>.
-                    </p>
                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>Artist</th>
+                                <th>Title</th>
+                                <th>Release Date</th>
+                                <th>Edit Button</th>
                             </tr>
                         </thead>
-
-
                         <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
+                            @foreach ($albums as $album)
+                                <tr>
+                                    <td>{{$album->artist->name}}</td>
+                                    <td>{{$album->title}}</td>
+                                    <td>{{$album->release_date}}</td>
+                                    <td>
+                                        <a href="{{ route('admin-albums-edit', $album->id) }}">
+                                        <button type="button" class="btn btn-primary"><i class="bi bi-pencil"></i>
+                                            Edit</button>
+                                    </a>
+                                    <form action="{{ route('admin-albums-delete', $album->id) }}" method="POST"
+                                        style="display: inline-block">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i>
+                                            Delete</button>
+                                    </form>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div> <!-- end col -->

@@ -41,8 +41,17 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/artist/update/{id}', [App\Http\Controllers\AdminArtistController::class, 'update'])->name('admin-artist-update');
     Route::delete('/admin/artist/delete/{id}', [App\Http\Controllers\AdminArtistController::class, 'destroy'])->name('admin-artist-delete');
 
-
+    // ROUTING ALBUMS
     Route::get('/admin/albums', [App\Http\Controllers\AdminAlbumsController::class, 'index'])->name('admin-albums');
+    Route::get('/admin/albums/create', [App\Http\Controllers\AdminAlbumsController::class, 'create'])->name('admin-albums-create');
+    Route::post('/admin/albums/store', [App\Http\Controllers\AdminAlbumsController::class, 'store'])->name('admin-albums-store');
+    Route::get('/admin/albums/edit/{id}', [App\Http\Controllers\AdminAlbumsController::class, 'edit'])->name('admin-albums-edit');
+    Route::put('/admin/albums/update/{id}', [App\Http\Controllers\AdminAlbumsController::class, 'update'])->name('admin-albums-update');
+    Route::delete('/admin/albums/delete/{id}', [App\Http\Controllers\AdminAlbumsController::class, 'destroy'])->name('admin-albums-delete');
+
+
+
+
     Route::get('/admin/songs', [App\Http\Controllers\AdminSongsController::class, 'index'])->name('admin-songs');
     Route::get('/admin/lyrics', [App\Http\Controllers\AdminLyricsController::class, 'index'])->name('admin-lyrics');
     Route::get('/admin/requestlyrics', [App\Http\Controllers\AdminRequestController::class, 'index'])->name('admin-requestlyrics');
