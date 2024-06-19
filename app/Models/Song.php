@@ -25,4 +25,9 @@ class Song extends Model
     {
         return $this->belongsTo(Album::class, 'id_album', 'id');
     }
+
+    public function lyrics()
+    {
+        return $this->hasMany(Lyric::class);
+    }
 }

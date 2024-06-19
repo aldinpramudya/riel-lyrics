@@ -3,7 +3,7 @@
     <div class="page-title-box">
         <div class="row align-items-center">
             <div class="col-md-8">
-                <h6 class="page-title">Create New Albums</h6>
+                <h6 class="page-title">Create New Songs</h6>
             </div>
         </div>
     </div>

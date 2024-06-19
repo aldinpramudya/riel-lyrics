@@ -123,9 +123,6 @@
     <!-- END layout-wrapper -->
 
     <!-- JAVASCRIPT -->
-
-
-
     <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
@@ -157,6 +154,10 @@
     <script src="{{ asset('assets/js/pages/dashboard.init.js') }}"></script>
 
     <script src="{{ asset('assets/js/app.js') }}"></script>
+
+    <!-- CK Editor -->
+    @yield('scripts')
+
 
 </body>
 

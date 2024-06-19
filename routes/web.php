@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\AdminLyricsController; // Add this line
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -57,9 +58,14 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/songs/update/{id}', [App\Http\Controllers\AdminSongsController::class, 'update'])->name('admin-songs-update');
     Route::delete('/admin/songs/delete/{id}', [App\Http\Controllers\AdminSongsController::class, 'destroy'])->name('admin-songs-delete');
 
-
-
-
+    // ROUTING LYRICS
     Route::get('/admin/lyrics', [App\Http\Controllers\AdminLyricsController::class, 'index'])->name('admin-lyrics');
+    Route::get('/admin/lyrics/create', [App\Http\Controllers\AdminLyricsController::class, 'create'])->name('admin-lyrics-create');
+    Route::post('/admin/lyrics/store', [App\Http\Controllers\AdminLyricsController::class, 'store'])->name('admin-lyrics-store');
+    Route::get('/admin/lyrics/edit/{id}', [App\Http\Controllers\AdminLyricsController::class, 'edit'])->name('admin-lyrics-edit');
+    Route::put('/admin/lyrics/update/{id}', [App\Http\Controllers\AdminLyricsController::class, 'update'])->name('admin-lyrics-update');
+    Route::delete('/admin/lyrics/delete/{id}', [App\Http\Controllers\AdminLyricsController::class, 'destroy'])->name('admin-lyrics-delete');
+    Route::get('/admin/lyrics/detail/{lyric}', [App\Http\Controllers\AdminLyricsController::class, 'show'])->name('admin-lyrics-detail');
+        
     Route::get('/admin/requestlyrics', [App\Http\Controllers\AdminRequestController::class, 'index'])->name('admin-requestlyrics');
 });
