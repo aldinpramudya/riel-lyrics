@@ -17,7 +17,6 @@ class Song extends Model
         'release_date',
         'youtube_link',
         'spotify_link',
-        'image',
     ];
 
     protected $dates = ['deleted_at'];
