@@ -5,8 +5,10 @@
         <div class="d-flex justify-content-center">
             <h2 class="text-uppercase fw-bolder">Artist</h2>
         </div>
-        <div class="d-flex justify-content-center mt-2">
-            <button type="button" class="btn btn-outline-dark btn-lg">Artist Name</button>
+        <div class="d-flex justify-content-center mt-2 gap-2">
+            @foreach ($artists as $artist)
+                <a href="{{ route('artist-detail', $artist->id) }}" class="btn btn-dark">{{ $artist->name }}</a>
+            @endforeach
         </div>
     </div>
 
@@ -24,7 +26,6 @@
             </div>
         </div>
     </div>
-
 @endsection
 
 @push('button-styles')

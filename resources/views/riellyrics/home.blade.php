@@ -21,17 +21,18 @@
             <h2 class="text-uppercase fw-bolder">Lyrics Gallery</h2>
         </div>
         <div class="d-flex justify-content-center mt-2">
-            {{-- Class Div For flex for many cards --}}
-            <div class="card" style="width: 18rem;">
-                <img src="{{asset('img/lisa-best-day.jpg')}}" class="card-img-top" alt="Song Name" style="width: 100%; height: auto;">
-                <div class="card-body">
-                    <h5 class="card-title">Song Title</h5>
-                    <p class="card-text">Artist</p>
-                    <div class="d-grid">
-                        <a href="#" class="btn btn-outline-dark text-uppercase">View Lyrics</a>
+            @foreach ($lyrics as $lyric)
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $lyric->song->alternate_title }}</h5>
+                            <h6 class="card-subtitle mb-2">{{ $lyric->song->album->artist->name }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ $lyric->song->album->title }}</h6>
+                            <a href="{{ route('lyric', $lyric->id) }}" class="d-grid btn btn-outline-dark">View Lyrics</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -40,8 +41,10 @@
         <div class="d-flex justify-content-center">
             <h2 class="text-uppercase fw-bolder">Artist</h2>
         </div>
-        <div class="d-flex justify-content-center mt-2">
-            <button type="button" class="btn btn-outline-dark btn-lg">Artist Name</button>
+        <div class="d-flex justify-content-center mt-2 gap-2">
+            @foreach ($artists as $artist)
+                <a href="{{route('artist-detail', $artist->id)}}" class="btn btn-outline-dark btn-lg">{{ $artist-> name }}</a>
+            @endforeach
         </div>
     </div>
 
@@ -61,7 +64,7 @@
             <a href="" style="color: black;">
                 <i class="bi bi-facebook" style="font-size: 4rem"></i>
             </a>
-            <a href=""  style="color: black;">
+            <a href="" style="color: black;">
                 <i class="bi bi-twitter-x" style="font-size: 4rem"></i>
             </a>
         </div>

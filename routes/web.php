@@ -29,6 +29,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/artist', [App\Http\Controllers\ArtistController::class, 'index'])->name('artist');
 Route::get('/requestlyrics', [App\Http\Controllers\RequestLyricsController::class, 'index'])->name('requestlyrics');
 Route::get('/aboutjoinus', [App\Http\Controllers\AboutJoinUsController::class, 'index'])->name('aboutjoinus');
+Route::get('/lyric/{lyric}', [App\Http\Controllers\HomeController::class, 'show'])->name('lyric');
+Route::get('/artist/{artist}', [App\Http\Controllers\ArtistController::class, 'show'])->name('artist-detail');
 
 // Route Admin
 Route::middleware(['auth'])->group(function () {
@@ -66,6 +68,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/lyrics/update/{id}', [App\Http\Controllers\AdminLyricsController::class, 'update'])->name('admin-lyrics-update');
     Route::delete('/admin/lyrics/delete/{id}', [App\Http\Controllers\AdminLyricsController::class, 'destroy'])->name('admin-lyrics-delete');
     Route::get('/admin/lyrics/detail/{lyric}', [App\Http\Controllers\AdminLyricsController::class, 'show'])->name('admin-lyrics-detail');
-        
+
     Route::get('/admin/requestlyrics', [App\Http\Controllers\AdminRequestController::class, 'index'])->name('admin-requestlyrics');
 });

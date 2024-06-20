@@ -18,9 +18,14 @@ class Artist extends Model
     ];
 
     protected $dates = ['deleted_at'];
-    
+
     public function albums()
     {
         return $this->hasMany(Album::class);
+    }
+
+    public function song()
+    {
+        return $this->hasManyThrough(Song::class, Album::class);
     }
 }

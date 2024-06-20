@@ -30,4 +30,9 @@ class Song extends Model
     {
         return $this->hasMany(Lyric::class);
     }
+
+    public function artist()
+    {
+        return $this->hasOneThrough(Artist::class, Album::class, 'id', 'id', 'id_album', 'id_artist');
+    }
 }
