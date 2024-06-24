@@ -18,18 +18,18 @@
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                 <h5 class="text-uppercase text-light fw-bolder">Visit Ours!</h5>
 
-                <ul class="list-unstyled mb-0">
+                <ul class="list-unstyled mb-0 ">
                     <li class="">
-                        <a href="#!" class="text-body text-light"><i class="bi bi-instagram"></i> Instagram</a>
+                        <a href="#!" class="text-light text-decoration-none"><i class="bi bi-instagram"></i> Instagram</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-body text-light"><i class="bi bi-twitter-x"></i> Twitter</a>
+                        <a href="#!" class="text-light text-decoration-none"><i class="bi bi-twitter-x"></i> Twitter</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-body text-light"><i class="bi bi-facebook"></i> Facebook</a>
+                        <a href="#!" class="text-light text-decoration-none"><i class="bi bi-facebook"></i> Facebook</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-body text-light"><i class="bi bi-discord"></i> Discord</a>
+                        <a href="#!" class="text-light text-decoration-none"><i class="bi bi-discord"></i> Discord</a>
                     </li>
                 </ul>
             </div>
