@@ -15,6 +15,10 @@
                 <label for="inputDescription" class="form-label">Description</label>
                 <input type="text" class="form-control" id="description" placeholder="i would like to request this song !">
             </div>
+            <div class="mb-3">
+                <label for="inputDate" class="form-label">Date</label>
+                <input type="date" class="form-control" id="date">
+            </div>
             <button type="submit" class="btn btn btn-outline-dark mb-3">Submit</button>
         </form>
     </div>

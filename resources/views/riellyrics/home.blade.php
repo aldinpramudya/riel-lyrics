@@ -17,8 +17,8 @@
 
     {{-- Lyrics Gallery --}}
     <div class="container mt-5">
-        <div class="d-flex justify-content-center">
-            <h2 class="text-uppercase fw-bolder">Lyrics Gallery</h2>
+        <div class="d-flex justify-content-center" id="scroll-container">
+            <h2 class="text-uppercase fw-bolder" id="scroll-text">Lyrics Gallery</h2>
         </div>
         <div class="d-flex justify-content-center mt-2">
             @foreach ($lyrics as $lyric)
